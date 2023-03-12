@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Opettajasivu</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: Helvetica, Arial, sans-serif;
+			background-color: #444654;
+			color: #ffffff;
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+		}
+
+		.container {
+  /* existing code */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+		h1 {
+			margin-top: 0;
+		}
+		
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			max-width: 400px;
+			margin-top: 20px;
+		}
+
+		.form-group {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 20px;
+			width: 100%;
+		}
+
+		.form-group label {
+			display: none;
+		}
+
+		.form-group input {
+			padding: 10px;
+			font-size: 16px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			background-color: #353641;
+			color: #fff;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.form-group input:focus {
+			outline: none;
+			border: 1px solid #fff;
+		}
+
+		.form-group input[type="submit"] {
+			background-color: #00A67E;
+			color: #fff;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			font-size: 16px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.form-group input[type="submit"]:hover {
+			background-color: #008c67;
+			transform: scale(1);
+		}
+
+		.footer {
+			height: 50px;
+			background-color: #343541;
+			z-index: 999;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.footer-text {
+			color: #ffffff;
+			font-size: 13px;
+		}
+		
+		@media only screen and (max-width: 600px) {
+			.container {
+				height: auto;
+				padding: 10px;
+			}
+			
+			form {
+				max-width: none;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Kirjaudu</h1>
+		<form action="Sivu2.html" method="POST" onsubmit="return auth()">
+			<div class="form-group">
+				<label for="username">Username:</label>
+				<input type="text" id="username" name="username" placeholder="Sähköposti" required>
+			</div>
+			<div class="form-group">
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" placeholder="Salasana" required>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Kirjaudu"/>
+			</div>
+		</form>
+	</div>
+	
+	<script>
+		function auth() {
+		  var username = document.getElementById("username").value;
+		  var password = document.getElementById("password").value;
+	  
+		  // check if the username and password are correct
+		  if (username === "viljampartanen@gmail.com" && password === "salasana") {
+			return true; // allow form submission
+		  } else {
+			var alertBox = document.createElement("div");
+			alertBox.innerHTML = "Virheellinen sähköposti tai salasana";
+			alertBox.style.backgroundColor = "#ff3333";
+			alertBox.style.color = "#fff";
+			alertBox.style.padding = "10px";
+			alertBox.style.borderRadius = "5px";
+			alertBox.style.marginBottom = "20px";
+			document.querySelector(".container").appendChild(alertBox);
+			return false; // prevent form submission
+		  }
+		}
+	  </script>
+	  
+	  </div>
+	  <div class="footer">
+		  <p class="footer-text">Copyright © 2023</p
+			

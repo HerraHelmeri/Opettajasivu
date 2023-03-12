@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blank Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      background-color: #444654;
+      padding: 0;
+      margin: 0;
+    }
+
+    #header {
+      background-color: #333540;
+      height: 50px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    #footer {
+      background-color: #343541;
+      height: 50px;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #side-menu {
+      background-color: #202123;
+      height: calc(100% - 100px);
+      width: 13%;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      z-index: 2;
+      border-radius: 0 0px 0px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    #side-menu button {
+      display: block;
+      width: 96%;
+      height: 30px;
+      background-color: #202123;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+      margin: 5px auto;
+      padding: 40px;
+      border-radius: 10px;
+      line-height: 1;
+    }
+
+    #side-menu button:hover {
+      background-color: #333540;
+      cursor: pointer;
+    }
+
+    #side-menu button span {
+      display: block;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #side-menu .lighter-section {
+      background-color: #202123;
+      height: 31.2%;
+      width: 100%;
+      position: relative;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      border-radius: 0;
+      border-bottom: 1px solid #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 36px;
+      color: #fff;
+    }
+
+    #footer-text {
+      color: #ffffff;
+      font-size: 13px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      #side-menu {
+        display: none;
+      }
+
+      #center-text {
+        font-size: 24px;
+      }
+
+      #header {
+        height: 80px;
+      }
+
+      #footer {
+        height: 80px;
+      }
+
+      #footer-text {
+        font-size: 10px;
+      }
+
+  </style>
+</head>
+<body>
+	<div id="header"></div>
+	<div id="side-menu">
+		<div class="lighter-section">
+			
+		</div>
+		<button><span>1. Luokka</span></button>
+		<button><span>2. Luokka</span></button>
+		<button><span>3. Luokka</span></button>
+		<button><span>4. Luokka</span></button>
+		<button><span>5. Luokka</span></button>
+		<button><span>6. Luokka</span></button>
+	</div>
+	<div id="footer">
+    <p id="footer-text">Copyright © 2023</p>
+  </div>
+	<div id="center-text">Tervetuloa!</div>
+</body>
+</html>
